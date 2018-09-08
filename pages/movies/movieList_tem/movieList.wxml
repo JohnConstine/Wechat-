@@ -1,0 +1,19 @@
+<import src="../movie_tem/movieTem.wxml" />
+<template name="movieListTem">
+  <view class="movie-list-container">
+    <view class="inner-container">
+      <view class="movie-head">
+        <text class="slogan">{{classMtitle}}</text>
+        <view class="more">
+          <text class="more-text" catchtap='onTapMovie' data-tapmovie="{{classMtitle}}">全部</text>
+          <image class="more-img" src="/images/arrow-right.png"></image>
+        </view>
+      </view>
+      <view class="movies-container"> 
+        <block wx:for="{{moviesdata}}" wx:for-item="Indexmovie"  wx:key="{{index}}">
+          <template is="movieTem" data='{{...Indexmovie}}' />
+        </block>
+      </view>
+    </view>
+  </view>
+</template>

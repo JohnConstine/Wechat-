@@ -1,0 +1,22 @@
+<import src="movieList_tem/movieList.wxml" />
+<import src="grild-search/search.wxml" />
+<view class='search'>
+  <icon type="search" class='search-img' size="13" color='#405f80'/>
+  <input type='text' placeholder="釜山行 你的名字" placeholder-class="placeholder" bindfocus='searchFocus' bindblur="loseFocus" value='{{searchValue}}'/>
+  <image class='xx-img' bindtap='clearFocus' src='/images/xx.png' wx:if="{{showsearchPenel}}"></image>
+</view>
+<view class='container' wx:if="{{showContainer}}">
+  <view class='movies-template'>
+    <template is="movieListTem" data="{{...inReceive}}"/>
+  </view>
+  <view class='movies-template'>
+    <template is="movieListTem" data="{{...inComing}}"/>
+  </view>
+  <view class='movies-template'>
+    <template is="movieListTem" data="{{...inTop250}}"/>
+  </view>
+</view>
+
+<view class='search-panel' wx:if="{{showsearchPenel}}">
+   <template is="searchGrild" data="{{...searchUrl}}"/>
+</view>

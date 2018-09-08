@@ -1,0 +1,32 @@
+<!-- 先静后动，先样式后数据 -->
+<view class='container'>
+  <image class='head-image' src='{{isPlayingMusic? music.coverImgUrl :headImgSrc}}'></image>
+  <image class='audio' catchtap='OnAudio' src="{{isPlayingMusic?'../../../images/music-stop.png' : '../../../images/music-start.png'}}"></image>
+  <view class='author-date'>
+    <image class='avatar' src='{{avatar}}'></image>
+    <text class='author'>{{star_data}}</text>
+    <text class='date'>{{dataTime}}</text>
+  </view>
+  <text class='title'>{{New_title}}</text>
+  <view class='tool'>
+    <view class='circle-img'>
+      <image wx:if="{{isActive}}" catchtap='OnCollection' src='../../../images/collection.png'></image>
+      <image wx:else catchtap='OnCollection' src='../../../images/collection-anti.png'></image>
+      <image class='share-img' catchtap='OnShare' src='../../../images/share.png'></image>
+    </view>
+    <view class='horizon'>
+
+    </view>
+  </view>
+  <text class='detail'>{{detail}}</text>
+
+<!-- 默认action-sheet为隐藏，由button触发 button现在被我擦掉了，等下单独设置 -->
+<action-sheet hidden="{{actionSheetHidden}}" bindchange="listenerActionSheet">
+   <action-sheet-item>
+         <button open-type="share">分享给微信好友</button>
+   </action-sheet-item>
+   <action-sheet-item>生成分享卡片</action-sheet-item>
+   <!--自动隐藏action-sheet-->
+   <action-sheet-cancel>取消</action-sheet-cancel>
+</action-sheet>
+</view>

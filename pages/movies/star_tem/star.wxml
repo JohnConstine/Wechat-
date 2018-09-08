@@ -1,0 +1,13 @@
+<template name="starTem">
+  <view class='stars-container'>
+    <view class='stars'>
+      <block wx:for="{{Moviestar}}" wx:for-item="idx" wx:key="index">
+         <image wx:if="{{idx == 1}}" src='/images/star.png'></image>
+         <image wx:elif="{{idx == 2}}" src='/images/half_star.png'></image>
+         <image wx:else src='/images/none-star.png'></image>
+      </block>
+    </view>
+    <text class="star-score">{{average}}分</text>
+  </view>
+   <!--{{Indexmovie.average}} {{average}}-->
+</template>

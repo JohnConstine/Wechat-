@@ -1,0 +1,24 @@
+<import src="News_item_template/news_item_template.wxml" /><!--导入模板-->
+<view>
+  <swiper catchtap='onSwiperDetail' indicator-dots="true" autoplay="true" interval="1750" circular="true">
+    <swiper-item>
+      <image data-newId="0" src='../../images/1.jpg'></image>
+    </swiper-item>
+    <swiper-item>
+      <image data-newId="1" src='../../images/2.png'></image>
+    </swiper-item>
+    <swiper-item>
+      <image data-newId="2" src='../../images/3.jpg'></image>
+    </swiper-item>
+    <swiper-item>
+      <image data-newId="3" src='../../images/4.jpg'></image>
+    </swiper-item>
+  </swiper>
+  <!--列表组件可以循环加内容：触发服务器传值(item子元素，index索引下标值方便锁定组件)-->
+  <block wx:for="{{date_key}}" wx:for-item="item" wx:key="{{index}}" wx:for-index="index">
+    <!-- 模板加事件 -->
+    <view bindtap='openDetail' data-newId="{{item.NewId}}">
+       <template is="NewsItem" data="{{item}}" />
+    </view>
+  </block>
+</view>

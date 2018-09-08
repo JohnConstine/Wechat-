@@ -1,0 +1,2 @@
+/* pages/movies/moretap-movie/moreMovie.wxss */
+@import "../movie-grild/grild.wxss";

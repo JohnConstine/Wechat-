@@ -1,0 +1,17 @@
+<!--创建一个名字叫NewsItem的模板-->
+<template name = "NewsItem">
+  <view class='New_container'>
+    <view class='New_author_star'>
+      <image class='New_star' src='{{item.img_content.New_star}}'></image>
+      <text class='star_data'>{{item.star_data}}</text>
+    </view>
+    <text class='New_title'>{{item.New_title}}</text>
+    <image class='star_img' src='{{item.img_content.star_img}}'></image>
+    <text class='New_content'>{{item.New_content}}</text>
+    <view class='New_end'>
+      <image class="New_end_img" src='{{item.img_content.New_end_img1}}'></image>
+      <image class='New_end_img' src='{{item.img_content.New_end_img2}}'></image>
+      <image class='New_end_img' src='{{item.img_content.New_end_img3}}'></image>
+    </view>
+  </view>
+</template>

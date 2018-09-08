@@ -1,0 +1,8 @@
+<import src="../star_tem/star.wxml" />
+<template name="movieTem">
+  <view class="movie-container" catchtap='openMdetail' data-id='{{doubanId}}'>
+      <image class="movie-img" src='{{doubanImg}}'></image>
+      <text class="movie-title">{{title}}</text>
+    <template is="starTem" data="{{average:average,Moviestar:Moviestar}}"/>
+  </view>
+</template> 

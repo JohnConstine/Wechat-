@@ -1,0 +1,91 @@
+<!--pages/Myinformation/info.wxml-->
+<view wx:if="{{showUser}}">
+  <view class='header-container'>
+    <image src='/images/login.jpg'></image>
+  </view>
+  <view class='item-container'>
+    <view class="item {{ids==0?'itemColorB':'itemColorA'}}" catchtouchstart="startMywallet" catchtouchend="end" data-id='0'>
+      <image src='/images/wallet.png'></image>
+      <text class='left'>我的钱包</text>
+      <text class='right'>$ 12.00</text>
+    </view>
+    <view class="item {{ids==1?'itemColorB':'itemColorA'}}" catchtouchstart="startMywallet" catchtouchend="end" data-id='1'>
+      <image src='/images/backup.png'></image>
+      <text class='left'>我的收藏</text>
+      <text class='right'>></text>
+    </view>
+    <view class="item {{ids==2?'itemColorB':'itemColorA'}}" catchtouchstart="startMywallet" catchtouchend="end" data-id='2'>
+      <image src='/images/gear6.png'></image>
+      <text class='left'>设置</text>
+      <text class='right'>></text>
+    </view>
+    <view class="item {{ids==3?'itemColorB':'itemColorA'}}" catchtouchstart="startMywallet" catchtouchend="end" data-id='3'>
+      <image src='/images/f045.png'></image>
+      <text class='left'>邀请好友</text>
+      <text class='right'>></text>
+    </view>
+  </view>
+  <view bindtap='exit' class='exit' data-text='用户登录'>
+    <button type='warn' size='default'>退出</button>
+  </view>
+</view>
+<!-- 用户登录界面 -->
+<view class='login-container' wx:if="{{showUserLogin}}">
+  <view class='header-container'>
+    <image src='/images/login.jpg'></image>
+  </view>
+  <view class='login-form'>
+    <form>
+      <view class='input-box'>
+        <view class="itemView">
+          <input name="userName" placeholder="邮箱 / 手机号 / 用户名" bindinput="userNameInput" />
+        </view>
+        <view class="lineV"></view>
+        <view class="itemView">
+          <input name="userName" placeholder="密码" bindinput="pasWInput" type='password' />
+        </view>
+      </view>
+      <button data-text='个人详情' bindtap="setLoading" hover-class="action" class="submitClick" formType="submit"> 登 录</button>
+      <text data-text='注册新用户' catchtap='onRegiste' class='registe'>注册新用户</text>
+    </form>
+  </view>
+
+</view>
+
+<!-- 用户注册界面 -->
+<view class='UserRegiste'>
+  <view wx:if="{{registe}}">
+    <view class='row'>
+      <view class='info'>
+        <input class='info-input1' bindinput="handleInputPhone" placeholder="请输入你的手机号" />
+      </view>
+      <button class='button' bindtap='doGetCode' disabled='{{disabled}}' style="background-color:{{color}}">{{text}}</button>
+    </view>
+    <view class='row'>
+      <view class='info'>
+        <input class='info-input' bindinput="handleVerificationCode" placeholder="请输入你的验证码" />
+      </view>
+
+    </view>
+    <view class='row'>
+      <view class='info'>
+        <input type='password' class='info-input' bindinput="handleNewChanges" placeholder="请输入你的密码" />
+      </view>
+
+    </view>
+    <view class='row'>
+      <view class='info'>
+        <input type='password' class='info-input' bindinput="handleNewChangesAgain" placeholder="请重新输入你的密码" />
+      </view>
+
+    </view>
+    <button class='submit' bindtap='submit' data-text="成功注册">提交</button>
+  </view>
+  <view class='success' wx:if="{{success}}">
+    <view class='cheer'>
+      <icon type="success" size="90" />
+       <text>恭喜您注册成功!</text>
+    </view>
+    <button type="primary" class='return' bindtap='return_home' data-text='用户登录'>确定</button>
+  </view>
+</view>

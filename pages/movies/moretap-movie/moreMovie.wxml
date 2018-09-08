@@ -1,0 +1,6 @@
+<!--pages/movies/moretap-movie/moreMovie.wxml-->
+<!-- <text>{{tapmovie}}</text> -->
+<import src="../movie-grild/grild.wxml" />
+<view bindtap='openMdetail'>
+   <template is="movieGrild" data="{{moviesdata}}" />
+</view>

@@ -1,0 +1,19 @@
+@import "../movie_tem/movieTem.wxss";
+  ::-webkit-scrollbar{
+width: 0;
+height: 0;
+color: transparent;
+}
+.grildTem{
+  float: left;
+  margin-bottom: 30rpx;
+  width: 32%;
+  margin-left: 1%;
+  height:370rpx;
+}
+.searchContainer{
+  height: 1200rpx;
+  margin: 40rpx 0 40rpx 0;
+  /* //background: rebeccapurple; */
+  white-space:nowrap;
+}

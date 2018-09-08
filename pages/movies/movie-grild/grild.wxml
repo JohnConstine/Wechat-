@@ -1,0 +1,13 @@
+<import src="../movie_tem/movieTem.wxml" />
+<template name="movieGrild">
+  <!-- 电影九宫格混蛋 -->
+  <!-- <scroll-view scroll-x="false" scroll-y="true" bindscrolltolower="onScrollMovie" class='grildContainer'> -->
+  <view class='grildContainer'>
+    <block wx:for="{{moviesdata}}" wx:for-item="moviedata" wx:key="index">
+      <view class='grildTem'>
+        <template is="movieTem" data="{{...moviedata}}" />
+      </view>
+    </block>
+    </view>
+  <!-- </scroll-view> -->
+</template>

@@ -1,0 +1,7 @@
+<view class='continer'>
+  <image class='img' src='../../images/one.jpg'></image>
+  <text class='user-name'>John Constine</text>
+  <view class='Login' bindtap='ontap'>
+    <text class='Login_msg'>Welcome BiliBili</text>
+  </view>
+</view>

@@ -1,0 +1,55 @@
+<!--pages/movies/actor/movieActor.wxml-->
+<view class="container">
+  <image class="head-img" src="{{directorMsg.avatars}}" mode="aspectFill" />
+  <view class="head-img-hover" data-src="{{movie.movieImg}}" catchtap="viewMoviePostImg">
+    <text class="main-title">{{directorMsg.name}}</text>
+    <text class="sub-title">{{directorMsg.englishName}}</text>
+  </view>
+  <image class="movie-img" src="{{directorMsg.avatars}}" data-src="{{movie.movieImg}}" catchtap="viewMoviePostImg" />
+  <view class="summary">
+    <view class="original-title">
+      <text>{{directorMsg.name}}</text>
+    </view>
+    <view class="flex-row">
+      <text class="mark">性别</text>
+      <text>{{directorMsg.gender}}</text>
+    </view>
+    <view class="flex-row">
+      <text class="mark">生日</text>
+      <text>{{directorMsg.birthday}}</text>
+    </view>
+    <view class="flex-row">
+      <text class="mark">出生地</text>
+      <text>{{directorMsg.bornPlace}}</text>
+    </view>
+    <view class="flex-row">
+      <text class="mark">职业</text>
+      <text>{{directorMsg.professions}}</text>
+    </view>
+    <view class="flex-row">
+      <text class="mark">星座</text>
+      <text>{{directorMsg.constellation}}</text>
+    </view>
+    <view class="flex-row">
+      <text class="mark">官方网站</text>
+      <text>www.zmso.xin</text>
+    </view>
+  </view>
+  <view class="hr"></view>
+  <view class="synopsis">
+    <text class="synopsis-font">个人简介</text>
+    <text class="summary-content">{{directorMsg.summary}}</text>
+  </view>
+  <view class="hr"></view>
+  <view class="cast">
+    <text class="cast-font">影人代表作品</text>
+    <scroll-view class="cast-imgs" scroll-x="true" style="width:100%">
+      <block wx:for="{{directorMsg.works}}" wx:for-item="item" wx:key="index">
+        <view class="cast-container">
+          <image catchtap='openMdetail' class="cast-img" src="{{item.subject.images.large}}" data-id="{{item.subject.id}}"></image>
+          <text class="cast-name">{{item.subject.title}}</text>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+</view>

@@ -1,0 +1,11 @@
+<import src="../movie_tem/movieTem.wxml" />
+<template name="searchGrild">
+  <!-- 电影搜索九宫格混蛋 -->
+  <scroll-view class='searchContainer' scroll-y="true" scroll-x="fasle" bindscrolltolower="ScrollMovie">
+    <block wx:for="{{moviesdata}}" wx:for-item="moviedata" wx:key="index">
+      <view class='grildTem'>
+        <template is="movieTem" data="{{...moviedata}}" />
+      </view>
+    </block>
+  </scroll-view>
+</template>

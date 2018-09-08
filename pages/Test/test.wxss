@@ -1,0 +1,10 @@
+/* pages/Test/test.wxss */
+.tc{
+  width: 100%;
+  height: 400rpx;
+}
+.tc video{
+  width: 95%;
+  margin-left: 2.5%;
+  height: 400rpx;
+}

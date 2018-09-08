@@ -1,0 +1,8 @@
+<!--pages/Test/test.wxml-->
+<!-- 测试页面 -->
+<view class="section tc">
+  <video src="{{src}}" controls></video>
+  <view class="btn-area">
+    <button bindtap="bindButtonTap">获取视频</button>
+  </view>
+</view>
